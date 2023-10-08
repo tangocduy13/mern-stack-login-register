@@ -23,7 +23,7 @@ exports.registerUser = async (req, res) => {
                 error: "Email is required"
             })
         } else {
-            if (emailValidator.validate(email)) {
+            if (!emailValidator.validate(email)) {
                 return res.json({
                     error: "Wrong email format"
                 })
